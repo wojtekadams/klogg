@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       ci-run-id:
-        description: "Run ID of the CI Build workflow (empty = last successful run on master)"
+        description: "Run ID of the CI Build workflow (empty = successful CI run of the selected branch head)"
         required: false
       tag:
         description: "Release tag. 'continuous' is replaced on every release, any other tag must not exist yet"
@@ -38,12 +38,14 @@ jobs:
         run: |
           run_id="${{ inputs.ci-run-id }}"
           if [ -z "$run_id" ]; then
-            run_id=$(gh run list --workflow ci-build.yml --branch master --status success \
+            # release only what was built from the commit this workflow runs on,
+            # never an older build of the branch
+            run_id=$(gh run list --workflow ci-build.yml --commit "$GITHUB_SHA" --status success \
                        --limit 1 --json databaseId --jq '.[0].databaseId')
-          fi
-          if [ -z "$run_id" ] || [ "$run_id" = "null" ]; then
-            echo "::error::No successful CI Build run found"
-            exit 1
+            if [ -z "$run_id" ] || [ "$run_id" = "null" ]; then
+              echo "::error::No successful CI Build for commit $GITHUB_SHA (${GITHUB_REF_NAME}). Wait for CI to finish (or re-run it) and start the release again, or pass ci-run-id explicitly."
+              exit 1
+            fi
           fi
           head_sha=$(gh run view "$run_id" --json headSha --jq .headSha)
           echo "Using CI run $run_id (commit $head_sha)"
