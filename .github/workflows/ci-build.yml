@@ -4,7 +4,6 @@ on:
   push:
     branches: [ master ]
     paths-ignore:
-      - 'website/**'
       - 'docs/**'
       - BUILD.md
       - CODE_OF_CONDUCT.md
@@ -15,7 +14,6 @@ on:
   pull_request:
     branches: [ master ]
     paths-ignore:
-      - 'website/**'
       - 'docs/**'
       - BUILD.md
       - CODE_OF_CONDUCT.md

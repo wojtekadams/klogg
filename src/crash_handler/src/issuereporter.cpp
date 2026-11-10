@@ -111,7 +111,7 @@ void IssueReporter::reportIssue( IssueTemplate issueTemplate, const QString& inf
     QUrlQuery query;
     query.addQueryItem( "body", body );
 
-    QUrl url( "https://github.com/variar/klogg/issues/new" );
+    QUrl url( "https://github.com/wojtekadams/klogg/issues/new" );
     url.setQuery( query );
     QDesktopServices::openUrl( url );
 }

@@ -44,16 +44,8 @@
 
 namespace {
 
-#if defined( Q_OS_WIN )
-static constexpr QLatin1String OsSuffix = QLatin1String( "-win", 4 );
-#elif defined( Q_OS_MACOS )
-static constexpr QLatin1String OsSuffix = QLatin1String( "-osx", 4 );
-#else
-static constexpr QLatin1String OsSuffix = QLatin1String( "-linux", 6 );
-#endif
-
 static constexpr QLatin1String VERSION_URL
-    = QLatin1String( "https://raw.githubusercontent.com/variar/klogg/master/latest.json", 65 );
+    = QLatin1String( "https://raw.githubusercontent.com/wojtekadams/klogg/master/latest.json", 70 );
 static constexpr std::time_t CHECK_INTERVAL_S = 3600 * 24 * 7; /* 7 days */
 
 bool isVersionNewer( const QString& current_version, const QString& new_version )
@@ -171,7 +163,8 @@ void VersionChecker::checkVersionData( QByteArray versionData )
     }
     else {
         latestVersion = latestVersionMap.value( "ci" ).toString();
-        url = latestVersionMap.value( "ci_url" ).toString() + OsSuffix;
+        // all platforms are published in a single release
+        url = latestVersionMap.value( "ci_url" ).toString();
     }
 
     const auto changeLog = latestVersionMap.value( "changelog" ).toList();

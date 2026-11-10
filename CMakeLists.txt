@@ -8,7 +8,7 @@ endif()
 
 project(
   klogg
-  VERSION 24.11.0
+  VERSION 26.11.0
   DESCRIPTION "klogg log viewer"
   LANGUAGES C CXX ASM
 )
@@ -216,7 +216,7 @@ add_custom_target(ci_build)
 
 add_subdirectory(3rdparty)
 add_subdirectory(src)
-add_subdirectory(website)
+add_subdirectory(docs)
 
 enable_testing()
 add_test(NAME klogg_smoke COMMAND klogg -platform offscreen -v)

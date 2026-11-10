@@ -1,28 +1,13 @@
 ![media_small](https://user-images.githubusercontent.com/1620716/119145300-2d98b800-ba52-11eb-8d87-abe72cf65dd1.png)
 
-[![GitHub license](https://img.shields.io/github/license/variar/klogg.svg?style=flat)](https://github.com/variar/klogg/blob/master/COPYING)
-[![C++](https://img.shields.io/github/languages/top/variar/klogg?style=flat)]()
-[![GitHub contributors](https://img.shields.io/github/contributors/variar/klogg.svg?style=flat)](https://github.com/variar/klogg/graphs/contributors/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f6db6ef0be3a4a5abff94111a5291c45)](https://www.codacy.com/manual/variar/klogg?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=variar/klogg&amp;utm_campaign=Badge_Grade)
+[![GitHub license](https://img.shields.io/github/license/wojtekadams/klogg.svg?style=flat)](https://github.com/wojtekadams/klogg/blob/master/COPYING)
+[![CI Build](https://github.com/wojtekadams/klogg/actions/workflows/ci-build.yml/badge.svg)](https://github.com/wojtekadams/klogg/actions/workflows/ci-build.yml)
+[![Latest build](https://img.shields.io/github/v/release/wojtekadams/klogg?include_prereleases&style=flat&label=latest%20build)](https://github.com/wojtekadams/klogg/releases/tag/continuous)
 
+> **This is a maintenance fork of [variar/klogg](https://github.com/variar/klogg)**, which itself is a fork of
+> [glogg](https://github.com/nickbnf/glogg). See [About this fork](#about-this-fork) for what is different.
 
-[![Github all releases](https://img.shields.io/github/downloads/variar/klogg/total?style=flat)](https://github.com/variar/klogg/releases/)
-[ ![Github](https://img.shields.io/github/v/release/variar/klogg?style=flat&label=Stable%20release&)](https://github.com/variar/klogg/releases/latest)
-
-[![Packaging status](https://repology.org/badge/vertical-allrepos/klogg.svg)](https://repology.org/project/klogg/versions)
-
-Check [GitHub releases](https://github.com/variar/klogg/releases/latest) for Windows installers and Linux/Mac packages.
-
-Development status
-
-[![Next milestone](https://img.shields.io/github/milestones/progress-percent/variar/klogg/4?style=flat&)](https://github.com/variar/klogg/milestone/4)
-[![Ready for testing](https://img.shields.io/github/issues-raw/variar/klogg/status:%20ready%20for%20testing?color=green&label=issues%20ready%20for%20testing&style=flat)](https://github.com/variar/klogg/issues?q=is%3Aopen+is%3Aissue+label%3A%22status%3A+ready+for+testing%22)
-[![Need documentation](https://img.shields.io/github/issues-search/variar/klogg?color=yellow&label=features%20need%20documentation&query=is%3Aissue%20label%3A%22status%3A%20need%20documentation%22&style=flat)](https://github.com/variar/klogg/issues?q=is%3Aissue+label%3A%22status%3A+need+documentation%22)
-[![GitHub commits](https://img.shields.io/github/commits-since/variar/klogg/v22.06.svg?style=flat)](https://github.com/variar/klogg/commits/)
-[![CI Build and Release](https://github.com/variar/klogg/actions/workflows/ci-build.yml/badge.svg)](https://github.com/variar/klogg/actions/workflows/ci-build.yml)
-
-[![Chat on Discord](https://img.shields.io/discord/838452586944266260?label=Discord&style=flat)](https://discord.gg/DruNyQftzB) [![Join the chat at https://gitter.im/klogg_log_viewer/community](https://badges.gitter.im/klogg_log_viewer/community.svg)](https://gitter.im/klogg_log_viewer/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Check [GitHub releases](https://github.com/wojtekadams/klogg/releases/tag/continuous) for Windows installers and Linux/Mac packages.
 
 ## Overview
 
@@ -31,22 +16,23 @@ through long and complex log files. It is designed with programmers and
 system administrators in mind and can be seen as a graphical, interactive
 combination of grep, less, and tail.
 
-![Klogg main window](website/static/screenshots/mainwindow.png)
+![Klogg main window](docs/static/screenshots/mainwindow.png)
 
 Please refer to the
 [documentation](DOCUMENTATION.md)
 page for how to use Klogg.
 
-### Latest testing builds
+### Latest builds
 
 | Windows | Linux | Mac |
 | ------------- |------------- | ------------- |
-| [continuous-win](https://github.com/variar/klogg/releases/tag/continuous-win) | [continuous-linux](https://github.com/variar/klogg/releases/tag/continuous-linux) | [continuous-osx](https://github.com/variar/klogg/releases/tag/continuous-osx) |
+| [installer / portable](https://github.com/wojtekadams/klogg/releases/tag/continuous) | [deb / AppImage](https://github.com/wojtekadams/klogg/releases/tag/continuous) | [dmg (Apple Silicon)](https://github.com/wojtekadams/klogg/releases/tag/continuous) |
 
-I try to keep a [changelog](CHANGELOG.md) with monthly changes. 
+The upstream [changelog](CHANGELOG.md) covers changes up to the fork point.
 
 ## Table of Contents
 
+1. [About this fork](#about-this-fork)
 1. [About the Project](#about-the-project)
 1. [Installation](#installation)
 1. [Building](#building)
@@ -54,6 +40,34 @@ I try to keep a [changelog](CHANGELOG.md) with monthly changes.
 1. [Contributing](#contributing)
 1. [License](#license)
 1. [Authors](#authors)
+
+## About this fork
+
+This repository is an **uplift of klogg** to current toolchains and dependencies, done with
+[Claude Code](https://claude.com/claude-code) (Anthropic's AI coding agent) under human review.
+The work was driven through pull requests in this repository; every change went through CI on all supported platforms.
+
+Project lineage:
+
+1. [glogg](https://github.com/nickbnf/glogg) by Nicolas Bonnefon - the original fast, smart log explorer
+2. [klogg](https://github.com/variar/klogg) by Anton Filimonov - fork of glogg started in 2016, rewritten for speed and features
+3. **this fork** - klogg brought up to date with current compilers, Qt and libraries
+
+What changed compared to upstream klogg (v24.11 development branch), released as version 26.11:
+
+* Builds with current toolchains: GCC 13-15, MSVC 2026 (VS 18), Apple Clang, CMake 4, Qt 6.4 - 6.10
+* Third-party libraries updated (efsw, CRoaring, simdutf, Catch2 3, mimalloc 3, vectorscan, oneTBB, ...)
+  with the source fixes they required
+* Supported platforms: Ubuntu 24.04 and 26.04 (`.deb`), any Linux with glibc 2.35+ (AppImage),
+  Windows x64 (installer and portable), macOS on Apple Silicon (`.dmg`, currently unsigned)
+* Dropped: Oracle Linux, Ubuntu 18.04/20.04/22.04 packages, 32-bit Windows, Qt 5 builds, macOS on Intel
+* Removed Sentry crash reporting and the Discord integration; Windows uses the native schannel TLS backend
+  instead of bundling OpenSSL 1.1
+* Modernized GitHub Actions CI and a new release workflow publishing all packages to GitHub releases
+
+All credit for klogg itself goes to its original authors - see [Authors](#authors).
+
+**[Back to top](#table-of-contents)**
 
 ## About the Project
 
@@ -65,7 +79,7 @@ make it faster and smarter that predecessor.
 Development of klogg is driven by features my colleagues and I need
 to stay productive as well as feature requests from users on Github and in glogg mailing list.
 
-Latest news about klogg development can be found at https://klogg.filimonov.dev.
+Latest news about upstream klogg development can be found at https://klogg.filimonov.dev.
 
 ### Comparing with glogg
 
@@ -103,85 +117,42 @@ https://user-images.githubusercontent.com/1620716/117588567-bea39100-b12c-11eb-9
 
 List of glogg issues that have been fixed/implemented in klogg can be found [here](https://github.com/variar/klogg/discussions/302).
 
-List of all changes can be found [here](https://github.com/variar/klogg/milestone/8?closed=1).
+List of all upstream changes can be found [here](https://github.com/variar/klogg/milestone/8?closed=1).
 
 **[Back to top](#table-of-contents)**
 
 ## Installation
 
-This project uses [Calendar Versioning](https://calver.org/). For a list of available versions, see the [repository tag list](https://github.com/variar/klogg/tags).
+This project uses [Calendar Versioning](https://calver.org/).
 
-### Current stable release builds
+### Builds of this fork
 
-Binaries for all platforms can be downloaded from GitHub releases.
+Packages for all supported platforms are published on the
+[continuous release](https://github.com/wojtekadams/klogg/releases/tag/continuous) page:
 
-[ ![Release](https://img.shields.io/github/v/release/variar/klogg?style=flat)](https://github.com/variar/klogg/releases/latest)
+| Platform | Package |
+| --- | --- |
+| Windows x64 | `klogg-<version>-x64-Qt6-setup.exe` (installer) or `klogg-<version>-x64-Qt6-portable.zip` |
+| Ubuntu 24.04 | `klogg-<version>-noble.deb` |
+| Ubuntu 26.04 | `klogg-<version>-resolute.deb` |
+| Other Linux (glibc 2.35+) | `klogg-<version>-x86_64.AppImage` |
+| macOS (Apple Silicon) | `klogg-<version>-mac-arm64.dmg` |
 
-#### Windows
-Windows installer is also available from:
+Install a `.deb` package with `sudo apt install ./klogg-<version>-noble.deb`.
 
-* [ ![Chocolatey](https://img.shields.io/chocolatey/v/klogg?style=flat)](https://chocolatey.org/packages/klogg)
-* [ ![Scoop Extras bucket](https://img.shields.io/scoop/v/klogg?bucket=extras)](https://scoopsearch.github.io/#/apps?q=klogg)
-* [Winget package](https://winget.run/pkg/variar/klogg) 
+To run the AppImage, make it executable (`chmod +x klogg-*.AppImage`) and start it.
+AppImages need FUSE 2; on recent Ubuntu install it with `sudo apt install libfuse2t64` (or `libfuse2` on 22.04).
 
-#### Mac OS
-Package for Mac can be installed from Homebrew
+The macOS package is not signed yet. On first start macOS will block it - open it with right click -> Open,
+or remove the quarantine flag: `xattr -dr com.apple.quarantine /Applications/klogg.app`.
 
-[ ![homebrew cask](https://img.shields.io/homebrew/cask/v/klogg?style=flat)](https://formulae.brew.sh/cask/klogg)
+### Upstream klogg packages
 
-#### Linux
-It is recommended to use klogg package from distribution-specific [repositories](https://repology.org/project/klogg/versions).
-
-Generic packages are available from klogg DEB and RPM repositories hosted at GitHub Pages.
-They are built to run on Ubuntu 18.04/20.04/22.04 and Oracle Linux 7/8 (x86-64 only).
-
-For DEB packages first download the gpg key:
-```
-curl -sS https://klogg.filimonov.dev/klogg.gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/klogg.gpg
-```
-
-You might need to manually create `/etc/apt/keyrings` directory.
-
-Then download the repository list file for you distribution (replace `<ubuntu_release>` with one of `bionic`, `focal`, `jammy`):
-```
-curl -sS https://klogg.filimonov.dev/deb/klogg.<ubuntu_release>.list | sudo tee /etc/apt/sources.list.d/klogg.list
-```
-
-Finally, install using apt
-```
-sudo apt-get update
-sudo apt install klogg
-```
-
-If there is already an entry for JFrogg hosted klogg repository in `/etc/apt/sources.list`, then remove this line from it:
-```
-deb [trusted=yes] https://favpackage.jfrog.io/artifactory/klogg_deb/ <ubuntu_release> utils
-```
-
-For RPM download klogg repo file (replace `<oracle_release>` with one of `7`, `8`):
-```
-curl -sS https://klogg.filimonov.dev/rpm/klogg-oracle-<oracle_release>.repo | sudo tee /etc/yum.repos.d/klogg-rpm.repo
-```
-
-Then install using yum
-```
-sudo yum update
-sudo yum install klogg
-```
-
-There is also an AppImage package that can be used without installation. To run klogg from AppImage, download the package and make in executable with either a file manager or terminal command `chmod +x <path_to_klogg_AppImage>` and then run the AppImage file.
-
-AppImage uses FUSE2 and Ubuntu 22.04 has moved away from FUSE2 into FUSE3 and therefore you need to install the necessary package to enable compatibility with FUSE2 `sudo apt install libfuse2`.
-
-As indicated by this link from the official appimage documentation: https://docs.appimage.org/user-guide/troubleshooting/fuse.html#setting-up-fuse-2-x-alongside-of-fuse-3-x-on-recent-ubuntu-22-04-debian-and-their-derivatives
-
-### Testing builds
-
-![CI Build and Release](https://github.com/variar/klogg/workflows/CI%20Build%20and%20Release/badge.svg)
-
-| Windows | Linux | Mac |
-| ------------- |------------- | ------------- |
-| [continuous-win](https://github.com/variar/klogg/releases/tag/continuous-win) | [continuous-linux](https://github.com/variar/klogg/releases/tag/continuous-linux) | [continuous-osx](https://github.com/variar/klogg/releases/tag/continuous-osx) |
+Stable releases of the original klogg (without the changes from this fork) are available from
+[variar/klogg releases](https://github.com/variar/klogg/releases/latest), distribution
+[repositories](https://repology.org/project/klogg/versions), [Chocolatey](https://chocolatey.org/packages/klogg),
+[Scoop](https://scoopsearch.github.io/#/apps?q=klogg), [Winget](https://winget.run/pkg/variar/klogg) and
+[Homebrew](https://formulae.brew.sh/cask/klogg).
 
 **[Back to top](#table-of-contents)**
 
@@ -197,8 +168,8 @@ First, please refer to the
 [documentation](DOCUMENTATION.md)
 page.
 
-You can open issues using [klogg issues page](https://github.com/variar/klogg/issues)
-or post questions to glogg development [mailing list](http://groups.google.co.uk/group/glogg-devel).
+Issues with builds from this fork can be reported on [this repository's issues page](https://github.com/wojtekadams/klogg/issues).
+Questions about klogg features in general are best asked in the [upstream klogg](https://github.com/variar/klogg/issues) project.
 
 ## Contributing
 
@@ -210,8 +181,9 @@ This project is licensed under the GPLv3 or later - see [COPYING](COPYING) file 
 
 ## Authors
 
-* **[Anton Filimonov](https://github.com/variar)**
-* *Initial work* - **[Nicolas Bonnefon](https://github.com/nickbnf)**
+* **[Anton Filimonov](https://github.com/variar)** - klogg
+* *Initial work* - **[Nicolas Bonnefon](https://github.com/nickbnf)** - glogg
+* *Fork maintenance* - **[wojtekadams](https://github.com/wojtekadams)**, uplift done with [Claude Code](https://claude.com/claude-code)
 
 See also the list of [contributors](https://klogg.filimonov.dev/docs/getting_involved/#contributors) who participated in this project.
 
