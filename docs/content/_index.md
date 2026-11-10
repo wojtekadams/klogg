@@ -7,6 +7,8 @@ type: docs
 
 _klogg_ is an open source multi-platform GUI application to search through all kinds of text log files using regular expressions. It has started as fork of [glogg project](https://glogg.bonnefon.org/) created by [Nicolas Bonnefon](https://github.com/nickbnf), and has evolved into a separate project with a lot of new features and improvements.
 
+This site belongs to [wojtekadams/klogg](https://github.com/wojtekadams/klogg), a maintenance fork of [klogg by Anton Filimonov](https://github.com/variar/klogg) brought up to date with current compilers, Qt 6 and libraries using [Claude Code](https://claude.com/claude-code).
+
 _klogg_ is designed to:
 
  - be very fast
@@ -26,7 +28,7 @@ Here is what _klogg_ looks like:
 {{< columns >}}
  _klogg_ inherited a lot of features from _glogg_
 
- - Runs on Unix-like systems, Windows and Mac thanks to Qt5
+ - Runs on Linux, Windows and Mac thanks to Qt
  - Displays search results separately from original file
  - Supports Perl-compatible regular expressions
  - Colorizes the log and search results
@@ -51,16 +53,22 @@ _klogg_ improves and brings more
 
 ## Downloads
 
-Latest stable version:
+Latest release of this fork:
 
-[ ![GitHub Release](https://img.shields.io/github/v/release/variar/klogg?label=GitHub%20Release&style=for-the-badge)](https://github.com/variar/klogg/releases/latest)
-[ ![Chocolatey](https://img.shields.io/chocolatey/v/klogg?style=for-the-badge)](https://chocolatey.org/packages/klogg)
-[ ![Homebrew](https://img.shields.io/homebrew/cask/v/klogg?style=for-the-badge)](https://formulae.brew.sh/cask/klogg)
+[ ![GitHub Release](https://img.shields.io/github/v/release/wojtekadams/klogg?include_prereleases&label=GitHub%20Release&style=for-the-badge)](https://github.com/wojtekadams/klogg/releases)
 
+{{< button href="https://github.com/wojtekadams/klogg/releases/latest" >}}Latest stable release{{< /button >}}
+{{< button href="https://github.com/wojtekadams/klogg/releases/tag/continuous" >}}Latest development build{{< /button >}}
+{{< button href="https://github.com/wojtekadams/klogg/releases" >}}All releases{{< /button >}}
 
-Latest development builds can be downloaded from releases on Github: 
+Every release contains packages for all supported platforms:
 
-{{< button href="https://github.com/variar/klogg/releases/tag/continuous-win" >}}Windows{{< /button >}}
-{{< button href="https://github.com/variar/klogg/releases/tag/continuous-linux" >}}Linux{{< /button >}}
-{{< button href="https://github.com/variar/klogg/releases/tag/continuous-osx" >}}Mac{{< /button >}}
+| Platform | Package |
+| --- | --- |
+| Windows x64 | `*-setup.exe` installer or `*-portable.zip` |
+| Ubuntu 24.04 / 26.04 | `*-noble.deb` / `*-resolute.deb` |
+| Other Linux (glibc 2.35+) | `*-x86_64.AppImage` |
+| macOS (Apple Silicon) | `*-mac-arm64.dmg` |
 
+Packages of the original klogg are available from [variar/klogg releases](https://github.com/variar/klogg/releases/latest),
+[Homebrew](https://formulae.brew.sh/cask/klogg) and Linux distribution [repositories](https://repology.org/project/klogg/versions).
