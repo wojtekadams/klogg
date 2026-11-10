@@ -60,3 +60,4 @@ cmake-build-relwithdebinfo/
 #website
 website/hugo
 website/resources/
+website/.hugo_build.lock
