@@ -53,7 +53,7 @@ Project lineage:
 2. [klogg](https://github.com/variar/klogg) by Anton Filimonov - fork of glogg started in 2016, rewritten for speed and features
 3. **this fork** - klogg brought up to date with current compilers, Qt and libraries
 
-What changed compared to upstream klogg (v24.11 development branch):
+What changed compared to upstream klogg (v24.11 development branch), released as version 26.11:
 
 * Builds with current toolchains: GCC 13-15, MSVC 2026 (VS 18), Apple Clang, CMake 4, Qt 6.4 - 6.10
 * Third-party libraries updated (efsw, CRoaring, simdutf, Catch2 3, mimalloc 3, vectorscan, oneTBB, ...)
