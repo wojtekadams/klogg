@@ -49,7 +49,7 @@ compile_commands.json
 /.vs
 /.vscode
 /.cache
-website/public
+docs/public
 
 # CLION
 .idea/
@@ -58,6 +58,6 @@ cmake-build-release/
 cmake-build-relwithdebinfo/
 
 #website
-website/hugo
-website/resources/
-website/.hugo_build.lock
+docs/hugo
+docs/resources/
+docs/.hugo_build.lock

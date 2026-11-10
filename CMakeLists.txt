@@ -216,7 +216,7 @@ add_custom_target(ci_build)
 
 add_subdirectory(3rdparty)
 add_subdirectory(src)
-add_subdirectory(website)
+add_subdirectory(docs)
 
 enable_testing()
 add_test(NAME klogg_smoke COMMAND klogg -platform offscreen -v)
