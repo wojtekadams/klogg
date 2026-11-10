@@ -5,6 +5,7 @@ on:
     branches: [ master ]
     paths-ignore:
       - 'website/**'
+      - 'docs/**'
       - BUILD.md
       - CODE_OF_CONDUCT.md
       - CONTRIBUTING.md
@@ -15,6 +16,7 @@ on:
     branches: [ master ]
     paths-ignore:
       - 'website/**'
+      - 'docs/**'
       - BUILD.md
       - CODE_OF_CONDUCT.md
       - CONTRIBUTING.md
