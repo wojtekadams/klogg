@@ -17,8 +17,7 @@ on:
 
 permissions:
   contents: write
-  # actions: write is needed to start the Website workflow after adding a news post
-  actions: write
+  actions: read
 
 concurrency:
   group: ci-release
@@ -34,9 +33,6 @@ jobs:
       RELEASE_TAG: ${{ inputs.tag }}
     steps:
       - uses: actions/checkout@v7.0.1
-        with:
-          # full history and tags for the news post change list
-          fetch-depth: 0
 
       - name: Find CI run
         run: |
@@ -104,20 +100,3 @@ jobs:
             --title "klogg $KLOGG_VERSION" \
             --notes-file notes.md \
             $prerelease_flag
-
-      - name: Add news post to website
-        if: ${{ inputs.tag != 'continuous' }}
-        run: |
-          ./.github/scripts/add-release-news.sh "$RELEASE_TAG" "$KLOGG_VERSION" "$CI_HEAD_SHA"
-          if git diff --quiet && [ -z "$(git status --porcelain docs/content/news)" ]; then
-            echo "No news post added"
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/content/news
-          git commit -m "Website: news post for release $RELEASE_TAG"
-          git pull --rebase origin "$GITHUB_REF_NAME"
-          git push origin "HEAD:$GITHUB_REF_NAME"
-          # pushes made with GITHUB_TOKEN do not trigger workflows, start the website build explicitly
-          gh workflow run website.yml --ref "$GITHUB_REF_NAME"
