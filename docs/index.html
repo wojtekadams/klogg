@@ -9,15 +9,16 @@
 <link rel="alternate icon" href="favicon.png" type="image/png">
 <style>
   :root {
-    --bg: #131923;
-    --surface: #1a212d;
-    --surface-2: #222b3a;
-    --border: #2c3647;
-    --text: #e7eaf0;
-    --muted: #9aa5b5;
+    --bg: #f7f8fa;
+    --surface: #ffffff;
+    --surface-2: #eef1f5;
+    --border: #dde2ea;
+    --text: #1b2230;
+    --muted: #5b6577;
     --accent: #f5c518;
     --accent-hover: #ffd43b;
     --on-accent: #1a1400;
+    --link: #8a6100;
     --radius: 10px;
   }
   * { box-sizing: border-box; }
@@ -28,7 +29,7 @@
     color: var(--text);
     font: 16px/1.6 "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, sans-serif;
   }
-  a { color: var(--accent); }
+  a { color: var(--link); }
   main { max-width: 960px; margin: 0 auto; padding: 0 16px; }
 
   /* Hero */
@@ -56,10 +57,10 @@
     font-weight: 600;
     text-decoration: none;
   }
-  .button.primary { background: var(--accent); color: var(--on-accent); }
+  .button.primary { background: var(--accent); color: var(--on-accent); box-shadow: 0 1px 2px rgba(27, 34, 48, 0.15); }
   .button.primary:hover { background: var(--accent-hover); }
-  .button.secondary { color: var(--text); border: 1px solid var(--border); }
-  .button.secondary:hover { background: var(--surface); }
+  .button.secondary { color: var(--text); border: 1px solid var(--border); background: var(--surface); }
+  .button.secondary:hover { background: var(--surface-2); }
   .meta { color: var(--muted); font-size: 0.875rem; margin-top: 14px; }
 
   /* Preview */
@@ -70,7 +71,7 @@
     height: auto;
     border-radius: var(--radius);
     border: 1px solid var(--border);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 24px 60px rgba(27, 34, 48, 0.18);
   }
 
   /* Sections */
@@ -82,6 +83,7 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 20px;
+    box-shadow: 0 1px 2px rgba(27, 34, 48, 0.04);
   }
   .feature h3 { margin: 0 0 6px; font-size: 1.05rem; }
   .feature p { margin: 0; color: var(--muted); }
@@ -101,7 +103,7 @@
 
   ol.steps { margin: 0; padding-left: 1.3em; }
   ol.steps li { margin-bottom: 8px; }
-  ol.steps li::marker { color: var(--accent); font-weight: 600; }
+  ol.steps li::marker { color: var(--link); font-weight: 600; }
 
   .table-wrap { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; }
