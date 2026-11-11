@@ -1,74 +1,43 @@
 ---
-title: "About"
-type: docs
+title: "klogg"
+lead: "klogg is a free, open source GUI application for browsing and searching through huge, complex log files. Think of it as a fast, interactive combination of grep, less and tail."
+screenshots:
+  - src: screenshots/dark.png
+    caption: Dark mode
+  - src: screenshots/highlighters.png
+    caption: Highlighter sets
+  - src: screenshots/scratchpad.png
+    caption: Scratchpad
 ---
 
-## Faster log explorer
+## Why klogg
 
-_klogg_ is an open source multi-platform GUI application to search through all kinds of text log files using regular expressions. It has started as fork of [glogg project](https://glogg.bonnefon.org/) created by [Nicolas Bonnefon](https://github.com/nickbnf), and has evolved into a separate project with a lot of new features and improvements.
+<div class="features">
 
-This site belongs to [wojtekadams/klogg](https://github.com/wojtekadams/klogg), a maintenance fork of [klogg by Anton Filimonov](https://github.com/variar/klogg) brought up to date with current compilers, Qt 6 and libraries using [Claude Code](https://claude.com/claude-code).
+**Fast on huge files**<br>
+Reads files directly from disk instead of loading them into memory. 10 GB logs are not a problem.
 
-_klogg_ is designed to:
+**Powerful search**<br>
+Perl-compatible regular expressions, combined with AND, OR and NOT. Results are shown separately from the file.
 
- - be very fast
- - handle huge log files
- - provide a clear view of the matches even in heavily cluttered files.
+**Clear view**<br>
+Highlighter sets color the log and the matches, an overview bar shows where the matches are.
 
-Here is what _klogg_ looks like:
+**Follows changes**<br>
+Watches files on disk and reloads them as they grow, like `tail -f`.
 
-<div id="gallery" style="display:none;">
-<img src="/screenshots/mainwindow.png" alt="Klogg main window" />
-<img src="/screenshots/dark.png" alt="Klogg dark theme" />
-<img src="/screenshots/scratchpad.png" alt="Klogg scratchpad" />
-<img src="/screenshots/highlighters.png" alt="Klogg highlighters configuration" />
+**Any encoding**<br>
+Detects UTF-8, UTF-16, CP1251 and many other encodings automatically.
+
+**Small things that help**<br>
+Scratchpad, favorite files, tab renaming, archive extraction, dark mode, configurable shortcuts.
+
 </div>
 
-## Features
-{{< columns >}}
- _klogg_ inherited a lot of features from _glogg_
+## About this fork
 
- - Runs on Linux, Windows and Mac thanks to Qt
- - Displays search results separately from original file
- - Supports Perl-compatible regular expressions
- - Colorizes the log and search results
- - Displays a context view of where in the log the lines of interest are
- - Is fast and reads the file directly from disk, without loading it into memory
- - Watches for file changes on disk and reloads it (kind of like tail)
-
-<--->
-
-_klogg_ improves and brings more
-
- - Is optimized for modern CPUs with multiple cores and SIMD instructions
- - Has portable version (no need to install)
- - Understands a lot of text encodings and detects many of them automatically
- - Allows to perform search in a portion of huge log file
- - Supports multiple sets of text highlight rules with more sophisticated match options
- - Provides many small features to make life easier (tab renaming, favorite files list, archive extraction,
- scratchpad etc.)
- 
-
-{{< /columns >}}
-
-## Downloads
-
-Latest release of this fork:
-
-[ ![GitHub Release](https://img.shields.io/github/v/release/wojtekadams/klogg?include_prereleases&label=GitHub%20Release&style=for-the-badge)](https://github.com/wojtekadams/klogg/releases)
-
-{{< button href="https://github.com/wojtekadams/klogg/releases/latest" >}}Latest stable release{{< /button >}}
-{{< button href="https://github.com/wojtekadams/klogg/releases/tag/continuous" >}}Latest development build{{< /button >}}
-{{< button href="https://github.com/wojtekadams/klogg/releases" >}}All releases{{< /button >}}
-
-Every release contains packages for all supported platforms:
-
-| Platform | Package |
-| --- | --- |
-| Windows x64 | `*-setup.exe` installer or `*-portable.zip` |
-| Ubuntu 24.04 / 26.04 | `*-noble.deb` / `*-resolute.deb` |
-| Other Linux (glibc 2.35+) | `*-x86_64.AppImage` |
-| macOS (Apple Silicon) | `*-mac-arm64.dmg` |
-
-Packages of the original klogg are available from [variar/klogg releases](https://github.com/variar/klogg/releases/latest),
-[Homebrew](https://formulae.brew.sh/cask/klogg) and Linux distribution [repositories](https://repology.org/project/klogg/versions).
+This site belongs to [wojtekadams/klogg](https://github.com/wojtekadams/klogg), a maintenance fork of
+[klogg](https://github.com/variar/klogg) by Anton Filimonov, which started as a fork of
+[glogg](https://github.com/nickbnf/glogg) by Nicolas Bonnefon.
+The fork brings klogg up to date with current compilers, Qt 6 and libraries; the uplift was done with
+[Claude Code](https://claude.com/claude-code).

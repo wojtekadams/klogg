@@ -1,0 +1,10 @@
+{{ define "main" }}
+<article class="content page">
+  {{ if eq .Section "news" }}
+    <p class="meta"><a href="{{ "news/" | relURL }}">← News</a> · <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></p>
+  {{ else }}
+    <h1>{{ .Title }}</h1>
+  {{ end }}
+  {{ .Content }}
+</article>
+{{ end }}

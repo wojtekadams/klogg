@@ -109,13 +109,13 @@ jobs:
         if: ${{ inputs.tag != 'continuous' }}
         run: |
           ./.github/scripts/add-release-news.sh "$RELEASE_TAG" "$KLOGG_VERSION" "$CI_HEAD_SHA"
-          if git diff --quiet && [ -z "$(git status --porcelain docs/content/docs/news)" ]; then
+          if git diff --quiet && [ -z "$(git status --porcelain docs/content/news)" ]; then
             echo "No news post added"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/content/docs/news
+          git add docs/content/news
           git commit -m "Website: news post for release $RELEASE_TAG"
           git pull --rebase origin "$GITHUB_REF_NAME"
           git push origin "HEAD:$GITHUB_REF_NAME"

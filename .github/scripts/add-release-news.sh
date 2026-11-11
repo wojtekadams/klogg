@@ -9,7 +9,7 @@ version=${2:?klogg version}
 sha=${3:?commit sha}
 repo=${GITHUB_REPOSITORY:-wojtekadams/klogg}
 
-news_dir=docs/content/docs/news
+news_dir=docs/content/news
 slug=$(echo "$tag" | tr -c 'A-Za-z0-9._-' '_' | sed 's/_*$//')
 post="$news_dir/release_${slug}.md"
 
@@ -17,12 +17,6 @@ if [ -e "$post" ]; then
   echo "News post $post already exists, keeping it"
   exit 0
 fi
-
-# newest posts have the lowest weight; weight 0 means "unweighted" in Hugo
-min_weight=$(find "$news_dir" -name '*.md' ! -name '_index.md' -exec grep -h '^weight:' {} + \
-  | awk '{print $2}' | sort -n | head -1)
-weight=$(( ${min_weight:-100} - 1 ))
-[ "$weight" -eq 0 ] && weight=-1
 
 # changes since the previous release tag (ignoring the rolling 'continuous' tag)
 previous=$(git describe --tags --abbrev=0 --exclude 'continuous*' --exclude "$tag" "${sha}^" 2>/dev/null || true)
@@ -42,8 +36,6 @@ cat > "$post" <<EOF
 ---
 title: "Version ${display_tag}"
 date: $(date -u +%Y-%m-%dT%H:%M:%S%:z)
-anchor: "v${slug//./_}"
-weight: ${weight}
 ---
 
 ## Version ${display_tag}
