@@ -107,16 +107,15 @@ The [changelog](CHANGELOG.md) covers upstream changes up to the fork point.
 See [BUILD.md](BUILD.md) for building klogg yourself and [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute.
 Bugs and ideas for this fork go to the [issues page](https://github.com/wojtekadams/klogg/issues).
 
-## License and authors
+## License
 
 klogg is free software licensed under the GNU GPL v3 or later – see [COPYING](COPYING).
 It is built with many open source libraries listed in [NOTICE](NOTICE).
 
-- **[Anton Filimonov](https://github.com/variar)** – klogg
-- **[Nicolas Bonnefon](https://github.com/nickbnf)** – glogg, the original project
-- **[wojtekadams](https://github.com/wojtekadams)** – fork maintenance
+## Authors
 
-Thanks to everyone who contributed to klogg: Alexander Hirsch, Alexei Colin, Andre Soares, Charley Peng,
-Dan Berindei, David Frey, Dmitry Afanasiev, Ilya Shvetsov, Gustav Andersson, Herman Semenov, Jeff Jensen,
-Jonathan Wakely, Marcin Twardak, neurocod, Paolo Cancedda, Patrick Tsai, Robin Luiten, Ryan Wu, Seerauber,
-Sergei Dyshel, Stephan Vedder, lilventi, PetbkA, plonibarploni, probonopd and wiz0u.
+* **[Anton Filimonov](https://github.com/variar)** - klogg
+* *Initial work* - **[Nicolas Bonnefon](https://github.com/nickbnf)** - glogg
+* *Fork maintenance* - **[wojtekadams](https://github.com/wojtekadams)**, uplift done with [Claude Code](https://claude.com/claude-code)
+
+See also the list of [contributors](https://klogg.filimonov.dev/docs/getting_involved/#contributors) who participated in this project.
